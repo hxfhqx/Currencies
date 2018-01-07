@@ -61,7 +61,6 @@
                 android:inputType="numberDecimal"
                 android:textColor="#fff"
                 android:textSize="30sp"
-
                 <requestFocus/>
             />
         </LinearLayout>
