@@ -48,5 +48,84 @@
             android:layout_weight="20"
             android:background="#222">
 
+            <EditText
+                android:id="@+id/edt_amount"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="#111"
+                android:digits="0123456789."
+                android:gravity="center_vertical"
+                android:inputType="numberDecimal"
+                android:textColor="#fff"
+                android:textSize="30sp"
+
+                <requestFocus/>
+            />
+        </LinearLayout>
+        <Button
+            android:id="@+id/btn_calc"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="10"
+            android:text="Calculate"
+            android:textColor="#AAA"/>
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="20"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="30"
+                android:gravity="bottom"
+                android:text="Home Currency"
+                android:textColor="#ff2239ff"/>
+            <Spinner
+                android:id="@+id/spn_hom"
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="55"
+                android:gravity="top"
+                ></Spinner>
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="15"
+                android:gravity="bottom"
+                android:text="Calculated result in home currrency:"
+                android:textColor="#666"
+                android:textSize="12sp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="20"
+            android:background="#222">
+
+            <TextView
+                android:id="@+id/txt_converted"
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="#3333"
+                android:gravity="center_vertical"
+                android:textSize="30sp"
+                android:typeface="normal"/>
         </LinearLayout>
     </LinearLayout>
