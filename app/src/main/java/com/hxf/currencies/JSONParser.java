@@ -9,13 +9,17 @@ import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
-
 import org.json.JSONException;
 import org.json.JSONObject;
-import java.io.*;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
 
 public class JSONParser {
-    static InputStream inputStream = null;
+    static java.io.InputStream inputStream = null;
     static JSONObject sReturnJsonObject = null;
     static String sRawJsonString ="";
 
@@ -24,10 +28,10 @@ public class JSONParser {
         // attempt to get response from server
         try{
             DefaultHttpCLient httpCLient=new DefaultHttpClient();
-            HttpPost httpPost=new HttpPost(url);
+            HttpPost httpPost = new HttpPost(url);
             HttpResponse httpResponse=httpCLient.execute(httpPost);
             HttpEntity htttpEntity=httpResponse.getEntity();
-            sInputStream=httpEntity.getContent();
+            sInputStream = httpEntity.getContent();
         }   catch (UnsupportedEncodingException e){
             e.printStackTrace();
         }   catch (ClientProtocolException e){
