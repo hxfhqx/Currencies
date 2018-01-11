@@ -2,6 +2,8 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 26
+// 由于AndroidStudio在新的编译版本中已经废弃了这些类:org.apache.http.*,为了使用这些类，增加如下一条语句。
+// 原来是Android 6.0不再支持 Apache HTTP client， 建议使用 HttpURLConnection 代替。
     useLibrary "org.apache.http.legacy"
     defaultConfig {
         applicationId "com.hxf.currencies"

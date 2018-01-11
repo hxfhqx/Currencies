@@ -7,5 +7,4 @@
     android:background="@drawable/world_currencies"
     android:orientation="vertical"
     >
-
 </LinearLayout>

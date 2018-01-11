@@ -19,7 +19,7 @@ import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 
 public class JSONParser {
-    static java.io.InputStream inputStream = null;
+    static InputStream sInputStream = null;
     static JSONObject sReturnJsonObject = null;
     static String sRawJsonString ="";
 
@@ -27,11 +27,11 @@ public class JSONParser {
     public JSONObject getJSONFromUrl(String url){
         // attempt to get response from server
         try{
-            DefaultHttpCLient httpCLient=new DefaultHttpClient();
+            DefaultHttpClient  httpCLient=new DefaultHttpClient();
             HttpPost httpPost = new HttpPost(url);
             HttpResponse httpResponse=httpCLient.execute(httpPost);
             HttpEntity htttpEntity=httpResponse.getEntity();
-            sInputStream = httpEntity.getContent();
+            sInputStream = htttpEntity.getContent();
         }   catch (UnsupportedEncodingException e){
             e.printStackTrace();
         }   catch (ClientProtocolException e){
