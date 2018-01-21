@@ -1,8 +1,8 @@
 package com.hxf.currencies;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Window;
 import android.widget.Toast;
@@ -16,6 +16,7 @@ import java.util.Iterator;
 public class SplashActivity extends Activity {
     // url to currency codes used in this application
     public static final String URL_CODES = "http://openexchangerates.org/api/currencies.json";
+    public static final String KEY_ARRAYLIST = "key_arraylist";
     // ArrayList of currencies that will be fetched and passed into MainActivity
     private ArrayList<String> mCurrencies;
     @Override
@@ -44,6 +45,9 @@ public class SplashActivity extends Activity {
                     key = (String) iterator.next();
                     mCurrencies.add(key + "|" + jsonObject.getString(key));
                 }
+                Intent mainIntet = new Intent(SplashActivity.this,MainActivity.class);
+                mainIntet.putExtra(KEY_ARRAYLIST,mCurrencies);
+                startActivity(mainIntet);
                 finish();
             } catch (JSONException e) {
                 Toast.makeText(SplashActivity.this,
